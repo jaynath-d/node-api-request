@@ -1,4 +1,4 @@
-import NodeApiRequest, { RequestOptions, ApiResponse } from '../src/index';
+import NodeApiRequest, { ApiResponse } from '../src/index';
 
 describe('NodeApiRequest', () => {
 
@@ -13,7 +13,7 @@ describe('NodeApiRequest', () => {
       jest.mock("request", () => mockRequest);
 
       // Call the sendRequest method with GET options
-      const options: RequestOptions = {
+      const options = {
         url: "http://example.com",
         method: "GET",
       };
