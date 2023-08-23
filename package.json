@@ -1,7 +1,7 @@
 {
-  "name": "npm-starter-kit",
-  "version": "1.0.0",
-  "description": "A sample NPM package with TypeScript and Jest",
+  "name": "node-request",
+  "version": "0.1.0",
+  "description": "Using Node-Request for Simplified HTTP Requests in Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
