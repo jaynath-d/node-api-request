@@ -1,4 +1,4 @@
-import NodeApiRequest, { ApiResponse } from '../src/index';
+import NodeApiRequest, { RequestOptions, ApiResponse } from '../src/index';
 
 describe('NodeApiRequest', () => {
 
