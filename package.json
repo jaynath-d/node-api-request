@@ -1,6 +1,6 @@
 {
   "name": "node-api-request",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Using Node-API-Request for Simplified HTTP Requests in Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,6 +8,13 @@
     "test": "jest",
     "build": "tsc"
   },
+  "keywords": [
+    "node-api-request",
+    "node-api",
+    "api-request",
+    "api",
+    "request"
+  ],
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "jest": "^27.5.1",
@@ -19,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaynath-d/npm-starter-kit.git"
+    "url": "git://github.com/jaynath-d/npm-api-request.git"
   },
   "author": "Jaynath Ray <pcode027@gmail.com>",
   "license": "MIT",
