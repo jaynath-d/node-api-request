@@ -7,6 +7,7 @@ export interface RequestOptions {
   method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   headers?: { [key: string]: string };
   body?: any;
+  params?: any;  
 }
 
 export interface ApiResponse<T = any> {
@@ -22,7 +23,8 @@ export default class NodeApiRequest {
           url: options.url,
           method: options.method || "GET",
           headers: options.headers,
-          body: options.body,
+          body: NodeApiRequest.methodHasNoBody(options.method || 'GET') ?  undefined : options.body,
+          params: NodeApiRequest.getQueryParams(options),
           json: true,
         },
         (error: any, response: any, body: any) => {
@@ -40,7 +42,16 @@ export default class NodeApiRequest {
     });
   }
 
-  static methodHasNoBody(method:string){
+  protected static methodHasNoBody(method:string){
     return METHODS_WITH_NO_BODY.indexOf(method) !== -1;
+  }
+
+  protected static getQueryParams(req:RequestOptions){
+    let queryParams = undefined;
+    const shouldUseDataAsParams = req.body && (typeof req.body === 'object') && NodeApiRequest.methodHasNoBody(req.method || 'GET');
+    if (shouldUseDataAsParams) {
+      queryParams = req.body
+    }
+    return queryParams
   }
 }
