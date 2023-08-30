@@ -1,6 +1,6 @@
 const request = require("request");
 
-interface RequestOptions {
+export interface RequestOptions {
   url: string;
   method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   headers?: { [key: string]: string };
