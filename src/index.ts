@@ -1,5 +1,7 @@
 const request = require("request");
 
+const METHODS_WITH_NO_BODY = ['GET', 'HEAD', 'DELETE'];
+
 export interface RequestOptions {
   url: string;
   method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
@@ -36,5 +38,9 @@ export default class NodeApiRequest {
         }
       );
     });
+  }
+
+  static methodHasNoBody(method:string){
+    return METHODS_WITH_NO_BODY.indexOf(method) !== -1;
   }
 }
